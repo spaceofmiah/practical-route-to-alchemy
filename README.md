@@ -82,7 +82,9 @@ GRANT ALL PRIVILEGES ON DATABASE learnsqlalchemy TO learner;
 The above command would give us the database configuration
 
 DATABASE_NAME = learnsqlalchemy
+
 DATABASE_USER = learner
+
 DATABASE_PASSWORD - StrongPassword123
 
 > **Disclaimer:**
