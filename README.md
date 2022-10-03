@@ -10,7 +10,7 @@ My learning journey to sqlalchemy
 
 To get started, ensure to have python and docker installed and do make sure to have clone this repository. Below is an outline on how to run the application in no given order ( _just make sure to have completed all the steps before [running the application](#running-the-aplication)_ )
 
-- [environment setup ( docker and postgres )](#environment-setup--docker-and-postgres)
+- [environment setup ( docker and postgres )](#environment-setup--docker-and-postgres-)
 
 - [creating application database](#creating-application-database)
 
@@ -24,6 +24,7 @@ To get started, ensure to have python and docker installed and do make sure to h
 SQLAlchemy is a database wrapper that helps to easily connect and interact with the database. To be able to connect to postgres database, we need to have one readily available. Docker comes to the rescue. Run the below commands on your terminal / command prompt
 
 > **Note:**
+>
 > Do make sure to have docker installed before running the commands below
 >
 
@@ -60,14 +61,15 @@ Above command gives access into the running database container within which we c
 Now that we've postgres instance up and have gain access into it, run the following command to create a database which we'll be working with.
 
 > **Note:**
-> Do make sure to have gained access into a running docker postgres:12-alpine container [how to](#environment-setup--docker-and-postgres)
+>
+> Do make sure to have gained access into a running docker postgres:12-alpine container [how to](#environment-setup--docker-and-postgres-)
 >
 
 ```shell
 psql --username=admin --password
 ```
 
-The above will bring up an interactive interface for you to enter the password which was given to the admin user during creation of a postgres instance. After entering the password (which is _password_ if you followed the [instructions](#environment-setup--docker-and-postgres) from to the T), press your return key or enter button.
+The above will bring up an interactive interface for you to enter the password which was given to the admin user during creation of a postgres instance. After entering the password (which is _password_ if you followed the [instructions](#environment-setup--docker-and-postgres-) from to the T), press your return key or enter button.
 
 This should give you access into postgres environment where you can proceed to creating a postgres database.
 
@@ -84,6 +86,7 @@ DATABASE_USER = learner
 DATABASE_PASSWORD - StrongPassword123
 
 > **Disclaimer:**
+>
 > This is just a learning process therefore, these values are not to be used in a real world application. Kindly ensure to use a stronger value for each setup. Something only you know
 >
 
@@ -125,10 +128,12 @@ To confirm that the setup is successful you should have an "Hello World" output
 #### Codebase Structure
 
 > **Disclaimer:**
+>
 > The application setup is by no means an opinionated approach to setting up sqlalchemy (especially when learning). I'm using what i'm most comfortable with at the moment. 
 >
 
 > **Note:**
+>
 > If you're following along this setup, kindly ensure to follow to the T the setup in this repository (which cloning should have fixed) otherwise, you might have issues running the code
 >
 
