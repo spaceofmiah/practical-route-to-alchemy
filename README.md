@@ -96,7 +96,11 @@ We're now ready to explore the application setup
 
 #### Application setup
 
-The only setup needed here, is to prefill [application database](#creating-application-database) values within as environment variables. The root directory has a `config.ini.tpl` which is a template of how the required environment variables. Rename this file to `config.ini` and fill the values ( those with _xxxx_ ) accordingly. If you've followed the setup in this guide, your configuration should be
+Aside to prefill [application database](#creating-application-database) values as environment variables, you'll also install the needed dependencies. 
+
+**Prefill Application Database Values**
+
+The root directory has a `config.ini.tpl` which is a template of how the required environment variables. Rename this file to `config.ini` and fill the values ( those with _xxxx_ ) accordingly. If you've followed the setup in this guide, your configuration should be
 
 ```ini
 [database]
@@ -105,6 +109,34 @@ password=StrongPassword123
 name=learnsqlalchemy
 host=localhost
 port=5432
+```
+
+**Install Application Dependencies**
+
+Run the following command to create and activate a virtual environment 
+
+```shell
+python -m venv env
+```
+
+If you're on windows, use the first command and linux the second command to activate just created virtual environment
+
+**first**
+
+```shell
+source env/Script/activate
+```
+
+**second**
+
+```shell
+source env/bin/activate
+```
+
+Now that virtual environment is created and activated, run the below command to install application dependencies
+
+```shell
+pip3 install -r requirements.txt
 ```
 
 #### Running the application 
