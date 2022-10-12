@@ -32,6 +32,43 @@ def create_item_table():
         conn.commit()
 
 
+def show_all_tables():
+    """Show all available tables in the database
+    
+    Returned tables excludes those having their
+    schema as `pg_catalog` and `information_schema`.
+    """
+    with create_connection() as conn:
+        results = conn.execute(
+            text(
+                '''
+                SELECT * FROM pg_catalog.pg_tables
+                WHERE schemaname != 'pg_catalog' 
+                AND schemaname != 'information_schema';
+                '''
+            )
+        )
+
+        for data in results:
+            print(f"{data[1]} Table".title())
+
+
+def rename_item_table():
+    """Rename Item table if it exists in the database"""
+    with create_connection() as conn:
+        conn.execute(
+            text(
+                '''
+                ALTER TABLE Item
+                RENAME TO Commodity
+                '''
+            )
+        )
+
+        conn.commit()
+
+
+
 def create_craved_item_table():
     """Create CravedItem table.
 
@@ -69,7 +106,7 @@ def create_craved_item_table():
 def drop_item_table():
     """Delete Item table"""
     with create_connection() as conn:
-        conn.execute(text("DROP TABLE Item"))
+        conn.execute(text("DROP TABLE Item CASCADE"))
         conn.commit()
 
 
