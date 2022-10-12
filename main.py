@@ -2,6 +2,8 @@ from src.basic import run_db_select_statement
 from db.scripts.queries import (
     create_item_table, 
     drop_item_table, 
+    show_all_tables,
+    rename_item_table,
 
     create_craved_item_table,
     drop_craved_item_table
@@ -9,4 +11,10 @@ from db.scripts.queries import (
 
 if __name__ == "__main__":
     create_item_table()
+    # create_craved_item_table()
+    # show_all_tables()
+    # rename_item_table()
+    # drop_item_table()
+    # drop_craved_item_table()
+    # show_all_tables()
         
