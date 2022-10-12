@@ -22,7 +22,7 @@ def create_item_table():
                     id              SERIAL PRIMARY KEY,
                     date_tracked    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     name            VARCHAR(250) NOT NULL,
-                    category        VARCHAR(200),
+                    category        VARCHAR(200)
                 )
                 '''
             )
