@@ -53,14 +53,14 @@ def show_all_tables():
             print(f"{data[1]} Table".title())
 
 
-def rename_item_table():
+def rename_item_table(old_table_name:str, new_table_name:str):
     """Rename Item table if it exists in the database"""
     with create_connection() as conn:
         conn.execute(
             text(
-                '''
-                ALTER TABLE Item
-                RENAME TO Commodity
+                f'''
+                ALTER TABLE {old_table_name}
+                RENAME TO {new_table_name}
                 '''
             )
         )
