@@ -10,11 +10,11 @@ from db.scripts.queries import (
 )
 
 if __name__ == "__main__":
-    create_item_table()
+    # create_item_table()
     # create_craved_item_table()
     # show_all_tables()
-    # rename_item_table()
+    rename_item_table('Commodity', 'Item')
     # drop_item_table()
     # drop_craved_item_table()
-    # show_all_tables()
+    show_all_tables()
         
