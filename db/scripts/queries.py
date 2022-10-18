@@ -68,7 +68,6 @@ def rename_item_table(old_table_name:str, new_table_name:str):
         conn.commit()
 
 
-
 def create_craved_item_table():
     """Create CravedItem table.
 
@@ -115,3 +114,28 @@ def drop_craved_item_table():
     with create_connection() as conn:
         conn.execute(text("DROP TABLE CravedItem"))
         conn.commit()
+
+
+def insert_item(name:str, category:str):
+    """Inserts new record into Item table
+
+    param: name [str] Represents an item name to be added
+    param: category [str] Represents an item category
+    """
+    with create_connection() as conn:
+        conn.execute(
+            text("INSERT INTO Item (name, category) VALUES (:name, :category)"),
+            {'name':name, 'category':category}
+        )
+        conn.commit()
+
+
+def retrieve_all_item():
+    """Retrieves all records from Item table"""
+    with create_connection() as conn:
+        results = conn.execute(
+            text("SELECT * FROM Item")
+        )
+
+        for result in results:
+            print(result)
