@@ -1,3 +1,5 @@
+from typing import List, Any, Dict
+
 from sqlalchemy import text
 from db.core.initializer import create_connection
 
@@ -126,6 +128,21 @@ def insert_item(name:str, category:str):
         conn.execute(
             text("INSERT INTO Item (name, category) VALUES (:name, :category)"),
             {'name':name, 'category':category}
+        )
+        conn.commit()
+
+
+def insert_multiple_items(data:List[Dict[str, Any]]):
+    """Allows insertion of multiple records into Item table
+
+    param: data [List] sequence of dictionary where each 
+           dictionary represents a record to be added to 
+           the db
+    """
+    with create_connection() as conn:
+        conn.execute(
+            text("INSERT INTO Item (name, category) VALUES (:name, :category)"),
+            data
         )
         conn.commit()
 
