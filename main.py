@@ -7,6 +7,7 @@ from db.scripts.queries import (
     insert_item,
     retrieve_all_item,
     insert_multiple_items,
+    update_existing_item_name,
 
     create_craved_item_table,
     drop_craved_item_table
@@ -21,16 +22,17 @@ if __name__ == "__main__":
     # drop_craved_item_table()
     # show_all_tables()
     # insert_item(name="Tesla Model S", category="Auto")
-    insert_multiple_items([
-        {
-            'name': 'Iphone 14 Pro Max',   
-            'category': 'mobile'
-        },
-        {
-            'name': 'Pizza',
-            'category': 'meal'
-        }
-    ])
+    # insert_multiple_items([
+    #     {
+    #         'name': 'Iphone 14 Pro Max',   
+    #         'category': 'mobile'
+    #     },
+    #     {
+    #         'name': 'Pizza',
+    #         'category': 'meal'
+    #     }
+    # ])
+    update_existing_item_name(item_id=1, new_value="Tesla Starlink")
     retrieve_all_item()
 
         

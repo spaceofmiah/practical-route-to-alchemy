@@ -147,6 +147,23 @@ def insert_multiple_items(data:List[Dict[str, Any]]):
         conn.commit()
 
 
+def update_existing_item_name(item_id:int, new_value:Any):
+    """Handles the update of an existing record name
+    in `Item` table
+
+    param: item_id [int] A unique identifier of the record to be 
+           updated.
+    param: new_value [Any] The new value to replace previous column
+           name value
+    """
+    with create_connection() as conn:
+        conn.execute(
+            text("UPDATE Item SET name=:update_value WHERE id=:id"),
+            {'id': item_id,  'update_value': new_value}
+        )
+        conn.commit()
+
+
 def retrieve_all_item():
     """Retrieves all records from Item table"""
     with create_connection() as conn:
