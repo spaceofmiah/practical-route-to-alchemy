@@ -153,8 +153,8 @@ def update_existing_item_name(item_id:int, new_value:Any):
 
     param: item_id [int] A unique identifier of the record to be 
            updated.
-    param: new_value [Any] The new value to replace previous column
-           name value
+    param: new_value [Any] Replacement value for previous `name` 
+           column value.
     """
     with create_connection() as conn:
         conn.execute(
@@ -163,6 +163,15 @@ def update_existing_item_name(item_id:int, new_value:Any):
         )
         conn.commit()
 
+
+def delete_item(id:int):
+    """Removes an existing item record from `Item` table.
+
+    param: id [int] A unique identifier for item to be deleted
+    """
+    with create_connection() as conn:
+        conn.execute(text("DELETE FROM Item WHERE id=:id"), {'id':id})
+        conn.commit()
 
 def retrieve_all_item():
     """Retrieves all records from Item table"""

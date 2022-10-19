@@ -5,6 +5,7 @@ from db.scripts.queries import (
     show_all_tables,
     rename_item_table,
     insert_item,
+    delete_item,
     retrieve_all_item,
     insert_multiple_items,
     update_existing_item_name,
@@ -32,7 +33,8 @@ if __name__ == "__main__":
     #         'category': 'meal'
     #     }
     # ])
-    update_existing_item_name(item_id=1, new_value="Tesla Starlink")
+    # update_existing_item_name(item_id=1, new_value="Tesla Starlink")
+    delete_item(1)
     retrieve_all_item()
 
         
