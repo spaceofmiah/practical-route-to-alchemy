@@ -38,7 +38,18 @@ CravedItem = Table(
 
 
 def create_all_tables():
+	"""Creates all tables"""
 	table_meta.create_all(engine)
 
 def drop_all_tables():
+	"""Drop all tables"""
 	table_meta.drop_all(engine)
+
+
+def drop_item():
+	"""Drops Item table"""
+	Item.drop(engine)
+
+def drop_craveditem():
+	"""Drops CravedItem table"""
+	CravedItem.drop(engine)
