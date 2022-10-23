@@ -39,3 +39,6 @@ CravedItem = Table(
 
 def create_all_tables():
 	table_meta.create_all(engine)
+
+def drop_all_tables():
+	table_meta.drop_all(engine)
