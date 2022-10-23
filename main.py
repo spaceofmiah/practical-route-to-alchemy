@@ -13,7 +13,10 @@ from db.scripts.queries import (
     create_craved_item_table,
     drop_craved_item_table
 )
-from db.models.items import create_all_tables
+from db.models.items import (
+    create_all_tables,
+    drop_all_tables
+)
 
 if __name__ == "__main__":
     # create_item_table()
@@ -37,7 +40,8 @@ if __name__ == "__main__":
     # update_existing_item_name(item_id=1, new_value="Tesla Starlink")
     # delete_item(1)
     # retrieve_all_item()
-    create_all_tables()
+    # create_all_tables()
+    drop_all_tables()
     show_all_tables()
 
         
