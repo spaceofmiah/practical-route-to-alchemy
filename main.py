@@ -15,7 +15,9 @@ from db.scripts.queries import (
 )
 from db.models.items import (
     create_all_tables,
-    drop_all_tables
+    drop_all_tables,
+    drop_craveditem,
+    drop_item,
 )
 
 if __name__ == "__main__":
@@ -41,7 +43,9 @@ if __name__ == "__main__":
     # delete_item(1)
     # retrieve_all_item()
     # create_all_tables()
-    drop_all_tables()
+    # drop_all_tables()
+    drop_craveditem()
+    drop_item()
     show_all_tables()
 
         
