@@ -1,0 +1,1 @@
+Houses application configurations for different environment ( development, staging & production)
