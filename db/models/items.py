@@ -4,8 +4,6 @@ from sqlalchemy import (
 	Integer, 	MetaData, 	DateTime,
 	ForeignKey,	Boolean,	Sequence
 )
-from db.core.initializer import engine
-
 
 
 table_meta = MetaData()
@@ -49,29 +47,3 @@ CravedItem = Table(
 )
 
 
-
-def create_all_tables():
-	"""Creates all tables"""
-	table_meta.create_all(engine)
-
-def create_item_table_with_core():
-	"""Creates item table"""
-	Item.create(engine, checkfirst=True)
-
-def create_craveditem_table_with_core():
-	"""Creates craved item table"""
-	CravedItem.create(engine, checkfirst=True)
-
-
-def drop_all_tables():
-	"""Drop all tables"""
-	table_meta.drop_all(engine)
-
-
-def drop_item():
-	"""Drops Item table"""
-	Item.drop(engine)
-
-def drop_craveditem():
-	"""Drops CravedItem table"""
-	CravedItem.drop(engine)
