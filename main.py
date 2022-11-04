@@ -42,8 +42,9 @@ if __name__ == "__main__":
     #         {'name': 'Nike Air', 'category': 'Shoe'},
     #     ]
     # )
-    # items_el.DML.delete_item(item_id=11)
-    items_el.DML.update_item(item_id=12, data={'category': 'Shoe'})
+    # items_el.DML.delete_item(item_id=19)
+    # items_el.DML.delete_many_items_by_id([19, 20, 21, 22, 23])
+    # items_el.DML.update_item(item_id=12, data={'category': 'Shoe'})
     results = items_el.DQL.retrieve_all_items()
     print("\n\n")
     for i in results:
