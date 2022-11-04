@@ -58,7 +58,7 @@ class DML:
 	"""Encapsulates database manipulation language (DML)"""
 
 	@staticmethod
-	def add_item(name, category):
+	def add_item(name:str, category:str):
 		"""Adds a single item to Item table"""
 		statement = Item.insert().values(name=name, category=category)
 		with create_connection() as conn:
