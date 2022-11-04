@@ -96,6 +96,18 @@ class DML:
 			conn.execute(statement, {'id': item_id})
 			conn.commit()
 
+
+	@staticmethod
+	def delete_many_items_by_id(id:list):
+		"""Deletes multiple items with the corresponding
+		id
+		"""
+		with create_connection() as conn:
+			statement = Item.delete().where(Item.c.id.in_(ids))
+			conn.execute(statement)
+			conn.commit()
+
+
 	@staticmethod
 	def update_item(item_id:int, data:Dict[str, str]):
 		"""Updates an existing item
