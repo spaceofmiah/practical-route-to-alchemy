@@ -16,7 +16,8 @@ Item = Table(
 		'id', 
 		Integer, 
 		Sequence('item_id'), 
-		primary_key=True
+		primary_key=True,
+		autoincrement=True,
 	),
 	Column('category', String(200)),
 	Column('name', String(250), nullable=False),
@@ -35,7 +36,8 @@ CravedItem = Table(
 		'id', 
 		Integer, 
 		Sequence('craveditem_id'), 
-		primary_key=True
+		primary_key=True,
+		autoincrement=True,
 	),
 	Column('item_id', ForeignKey('item.id')),
 	Column('is_satisfied', Boolean(), default=False),
