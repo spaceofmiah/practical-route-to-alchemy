@@ -56,4 +56,6 @@ if __name__ == "__main__":
         )
     print("\n\n")
 
+    print(items_el.DQL.retrieve_item_by_id(17).fetchall())
+
         
