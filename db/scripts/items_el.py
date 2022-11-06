@@ -67,8 +67,7 @@ class DQL:
 			.where(Item.c.id==bindparam('id', type_=Integer))
 		)
 		with create_connection() as conn:
-			result = conn.execute(statement, {'id': id})
-			return result
+			return conn.execute(statement, {'id': id})
 
 
 class DML:
