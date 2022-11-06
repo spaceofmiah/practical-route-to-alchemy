@@ -50,6 +50,9 @@ class DQL:
 
 	@staticmethod
 	def retrieve_all_items():
+		"""Retrieves all data entries and 
+		corresponding columns from Item table.
+		"""
 		statement = select(Item)
 		with create_connection() as conn:
 			result = conn.execute(statement)
