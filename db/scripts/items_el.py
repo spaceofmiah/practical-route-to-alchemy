@@ -58,6 +58,20 @@ class DQL:
 			result = conn.execute(statement)
 			return result
 
+	@staticmethod
+	def retrieve_item_by_id(id:int):
+		"""Retrieves a single item by it's id.
+		
+		- id <int> A unique identifier of an item.
+		"""
+		statement = (
+			select(Item)
+			.where(Item.c.id==bindparam('id', type_=Integer))
+		)
+		with create_connection() as conn:
+			result = conn.execute(statement, {'id': id})
+			return result
+
 
 class DML:
 	"""Encapsulates database manipulation language (DML)"""
