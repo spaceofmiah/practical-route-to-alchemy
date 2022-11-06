@@ -53,10 +53,8 @@ class DQL:
 		"""Retrieves all data entries and 
 		corresponding columns from Item table.
 		"""
-		statement = select(Item)
 		with create_connection() as conn:
-			result = conn.execute(statement)
-			return result
+			return conn.execute(select(Item))
 
 	@staticmethod
 	def retrieve_item_by_id(id:int):
