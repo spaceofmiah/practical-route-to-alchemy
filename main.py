@@ -1,5 +1,4 @@
-from db.scripts import queries as q
-from db.scripts import items_el
+from db.scripts import queries as q, items_el
 
 
 
