@@ -112,9 +112,9 @@ class DML:
 
 
 	@staticmethod
-	def delete_many_items_by_id(id:list):
+	def delete_many_items_by_id(ids:list):
 		"""Deletes multiple items with the corresponding
-		id
+		ids
 		"""
 		with create_connection() as conn:
 			statement = Item.delete().where(Item.c.id.in_(ids))
